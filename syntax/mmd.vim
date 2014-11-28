@@ -100,7 +100,7 @@ syn match  mkdCode          /^\s*\n\(\(\s\{4,}[^ ]\|\t\+[^\t]\).*\n\)\+/
 syn match  mkdLineBreak     /  \+$/
 syn match  mkdTODO          /TODO:/
 syn region mkdCode          start=/\\\@<!`/            end=/\\\@<!`/
-syn region mkdCode          start=/\s*``[^`]*/         end=/[^`]*``\s*/
+syn region mkdCode          start=/\s*```[^`]*/         end=/[^`]*```\s*/
 syn match  mkdBlockquote     /^>\+\s\?/ nextgroup=mkdListItemAfterBQ   
 syn region mkdCode          start="<pre[^>]*>"         end="</pre>"
 syn region mkdCode          start="<code[^>]*>"        end="</code>"
