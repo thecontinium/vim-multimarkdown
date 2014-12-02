@@ -21,7 +21,7 @@ function! MmdToHtml()
   else
     silent !rm -f  ~/.mmd-preview/markdown-preview.mmd
   endif
-  silent ! cat % >> ~/.mmd-preview/markdown-preview.mmd
+  silent ! cat "%" >> ~/.mmd-preview/markdown-preview.mmd
   silent ! multimarkdown ~/.mmd-preview/markdown-preview.mmd > ~/.mmd-preview/markdown-preview.html
 endfunction
 
