@@ -18,7 +18,10 @@ function! MmdToHtml()
   silent ! mkdir -p ~/.mmd-preview 
   if !filereadable("~/.mmd-preview/mmd-meta-data-headers.mmd") 
     silent !cat ~/.mmd-preview/mmd-meta-data-headers.mmd > ~/.mmd-preview/markdown-preview.mmd 
-    silent !echo "\n" >>  ~/.mmd-preview/markdown-preview.mmd
+    let result = system("multimarkdown -m ". expand("%"))
+    if empty(result) 
+      silent !echo "\n" >>  ~/.mmd-preview/markdown-preview.mmd
+    endif
   else
     silent !rm -f  ~/.mmd-preview/markdown-preview.mmd
   endif
