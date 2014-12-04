@@ -9,8 +9,8 @@ endif
 " Turn Preview On 
 function! MmdPreviewOn()
   silent Mmdtohtml
-  silent ! open ~/.mmd-preview/markdown-preview.html 
-  autocmd BufWritePost *.mmd Mmdtohtml
+  silent ! open -g ~/.mmd-preview/markdown-preview.html 
+  autocmd BufEnter,BufWritePost *.mmd Mmdtohtml
 endfunction
 
 " Use multimarkdown to produce html file  
@@ -31,7 +31,7 @@ endfunction
 
 " Remove all WritePost autocommands for mmd files
 function! MmdAutoOff()
-  autocmd! BufWritePost *.mmd 
+  autocmd! BufWritePost,BufEnter *.mmd 
 endfunction
 
 " Create repective commands
