@@ -130,21 +130,21 @@ syn match  htmlH2       /^.\+\n-\+$/ contains=@Spell
 "    \ fold contains=TOP,@NoSpell
 
 " fold region for references
-syn region mkdReferenceFold
-    \ start="^<!--\z(\S*\)-->"
-    \ end="^<!--END\z1-->"
-    \ fold contains=TOP,@NoSpell
+"syn region mkdReferenceFold
+"    "\ start="^<!--\z(\S*\)-->"
+"    "\ end="^<!--END\z1-->"
+"    "\ fold contains=TOP,@NoSpell
 
 " fold region for lists
-syn region mkdListFold
-    \ start="^\z(\s*\)\*\z(\s*\)"
-    \ skip="^\z1 \z2\s*[^#]"
-    \ end="^\(.\)\@="
-    \ fold contains=TOP,@NoSpell
+"syn region mkdListFold
+"    "\ start="^\z(\s*\)\*\z(\s*\)"
+"    "\ skip="^\z1 \z2\s*[^#]"
+"    "\ end="^\(.\)\@="
+"    "\ fold contains=TOP,@NoSpell
 
 
 syn sync fromstart
-setlocal foldmethod=syntax
+"setlocal foldmethod=syntax
 
 HtmlHiLink mkdMaths SpecialComment
 
